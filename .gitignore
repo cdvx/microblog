@@ -1,7 +1,6 @@
 __pycache__/
 v_env/
-
-
 app/__pycache__/
+migrations/__pycache__/
 
 
