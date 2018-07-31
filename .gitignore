@@ -3,6 +3,5 @@ v_env/
 
 
 app/__pycache__/
-app/__pycache__/__init__.cpython-36.pyc
-app/__pycache__/routes.cpython-36.pyc
+
 
