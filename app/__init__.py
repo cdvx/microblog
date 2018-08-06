@@ -19,7 +19,7 @@ login.login_view = "login"
 manager = Manager(app)
 
 
-from app import routes, models
+from app import routes, models, errors
 
 
 # manager = Manager
