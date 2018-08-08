@@ -1,4 +1,24 @@
-2018-08-06 18:33:58,924 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+2018-08-07 18:50:15,317 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 22, in index
+    return render_template('index.html', title='Home page', form=form ,posts =userPosts)
+UnboundLocalError: local variable 'userPosts' referenced before assignment
+2018-08-07 18:51:23,383 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-07 18:51:34,298 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,108 +35,5 @@ Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
   File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 21, in index
-    return render_template('index.html', title='Home page', form=form)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\base.html", line 29, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 18, in block "content"
-    <p>{{ post }}</p> <!--says: <b>{{ post.body }}</b></p-->
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\markupsafe\_native.py", line 22, in escape
-    return Markup(text_type(s)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\models.py", line 46, in __repr__
-    return '<Post {}>'.format(self.body)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 452, in __str__
-    return str(self.compile())
-  File "<string>", line 1, in <lambda>
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 442, in compile
-    return self._compiler(dialect, bind=bind, **kw)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 448, in _compiler
-    return dialect.statement_compiler(dialect, self, **kw)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 453, in __init__
-    Compiled.__init__(self, dialect, statement, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 219, in __init__
-    self.string = self.process(self.statement, **compile_kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 245, in process
-    return obj._compiler_dispatch(self, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\visitors.py", line 81, in _compiler_dispatch
-    return meth(self, **kw)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 716, in visit_column
-    name = self.preparer.quote(name)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3092, in quote
-    if self._requires_quotes(ident):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3063, in _requires_quotes
-    lc_value = value.lower()
-AttributeError: 'String' object has no attribute 'lower'
-2018-08-07 17:47:44,106 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-07 17:47:58,334 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 21, in index
-    return render_template('index.html', title='Home page', form=form ,posts =x)
-UnboundLocalError: local variable 'x' referenced before assignment
-2018-08-07 17:49:39,360 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-07 17:49:44,255 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 21, in index
-    return render_template('index.html', title='Home page', form=form ,posts =Post.query.all(user_id=current_user.id))
-TypeError: all() got an unexpected keyword argument 'user_id'
-2018-08-07 18:03:00,628 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-07 18:03:08,991 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 21, in index
-    return render_template('index.html', title='Home page', form=form ,posts =x)
-UnboundLocalError: local variable 'x' referenced before assignment
+    return render_template('index.html', title='Home page', form=form ,posts =user.posts)
+UnboundLocalError: local variable 'user' referenced before assignment

@@ -11,6 +11,7 @@ def load_user(id):
 	return User.query.get(int(id))
 
 class User(UserMixin, db.Model):
+	__tablename__='User'
 	id = db.Column(db.Integer,primary_key=True)
 	username = db.Column(db.String(64), index=True, unique=True)
 	email = db.Column(db.String(120), index=True, unique=True)
@@ -36,6 +37,7 @@ class User(UserMixin, db.Model):
 
 
 class Post(db.Model):
+	__tablename__='Post'
 	id  = db.Column(db.Integer, primary_key=True)
 	body = db.column(db.String(140))
 	timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
@@ -45,9 +47,15 @@ class Post(db.Model):
 	def __repr__(self):
 		return '<Post {}>'.format(self.body)
 
+post_identifier = db.Table('Post',
+	db.Column('id',db.Integer, db.ForeignKey('Posts.id'))
+	db.Column('id',db.Integer, db.ForeignKey('User.id')))
 
- class Posts(db.Model):
- 	id = db.Column()
+
+class Posts(db.Model):
+	__tablename__='Posts'
+	posts_id = db.Column(db.Integer, primary_key=True)
+	posts = db.relationship('Posts',backref=author, secondary=post_identifier)
  	# def _init_():
  	# 	self.list = []
  	# def add_post(self, self.id):

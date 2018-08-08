@@ -17,8 +17,8 @@ def index():
         db.session.commit()
         flash('Your post is now live!')
         return redirect(url_for('index'))
-        x = Post.query.filter_by(Post.user_id==current_user.id).all() 
-    return render_template('index.html', title='Home page', form=form ,posts =x)
+        #user = session.query(User).get(current_user.id)
+    return render_template('index.html', title='Home page', form=form)# ,posts =user.posts)
 
 @app.route('/register', methods=['GET','POST'])
 def register():

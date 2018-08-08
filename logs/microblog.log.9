@@ -1,5 +1,26 @@
-2018-08-06 14:07:06,526 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:08:15,439 ERROR: Exception on /edit_profile [POST] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+2018-08-06 14:35:45,829 ERROR: Exception on /edit_profile [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 50, in edit_profile
+    form = EditProfileForm()#current_user.username
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\wtforms\form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+TypeError: __init__() missing 1 required positional argument: 'original_username'
+2018-08-06 14:36:33,106 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 14:36:48,045 ERROR: Exception on /edit_profile [POST] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -27,25 +48,17 @@ Traceback (most recent call last):
     stop_validation = self._run_validation_chain(form, chain)
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\wtforms\fields\core.py", line 226, in _run_validation_chain
     validator(form, self)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\forms.py", line 40, in validate_username
-    if user == curent_user.username:
-NameError: name 'curent_user' is not defined
-2018-08-06 14:09:05,493 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:17:23,271 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:22:59,015 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:24:25,937 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:24:40,975 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:25:33,884 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:27:14,443 ERROR: Exception on /edit_profile [POST] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
+  File "C:\Users\GETRUDE\Desktop\microblog\app\forms.py", line 43, in validate_username
+    if username.data != self.original_username:
+NameError: name 'username' is not defined
+2018-08-06 14:38:05,697 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 14:44:58,030 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 14:49:00,871 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 15:39:56,512 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 15:48:29,040 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 15:52:44,972 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 15:59:15,500 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 16:00:13,258 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -61,54 +74,47 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 54, in edit_profile
-    db.session.commit()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\session.py", line 943, in commit
-    self.transaction.commit()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\session.py", line 467, in commit
-    self._prepare_impl()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\session.py", line 447, in _prepare_impl
-    self.session.flush()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\session.py", line 2254, in flush
-    self._flush(objects)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\session.py", line 2380, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
-    raise value
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\session.py", line 2344, in _flush
-    flush_context.execute()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
-    rec.execute(self)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
-    uow
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\persistence.py", line 177, in save_obj
-    mapper, table, update)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\persistence.py", line 768, in _emit_update_statements
-    execute(statement, multiparams)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
+  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
+    return render_template('index.html', title='Home page', form=form, posts=User.posts)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: 'UPDATE user SET username=?, about_me=? WHERE user.id = ?'] [parameters: ('nyaanya mbissi', '', 3)] (Background on this error at: http://sqlalche.me/e/gkpj)
-2018-08-06 14:28:09,344 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:31:31,461 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:33:20,576 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:35:39,188 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\base.html", line 29, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 19, in block "content"
+    {{ post.author.username }} says: <b>{{ post.body }}</b>
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\markupsafe\_native.py", line 22, in escape
+    return Markup(text_type(s)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 452, in __str__
+    return str(self.compile())
+  File "<string>", line 1, in <lambda>
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 442, in compile
+    return self._compiler(dialect, bind=bind, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 448, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 453, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 219, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 245, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\visitors.py", line 81, in _compiler_dispatch
+    return meth(self, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 716, in visit_column
+    name = self.preparer.quote(name)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3092, in quote
+    if self._requires_quotes(ident):
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3063, in _requires_quotes
+    lc_value = value.lower()
+AttributeError: 'String' object has no attribute 'lower'

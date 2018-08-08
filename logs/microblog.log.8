@@ -1,64 +1,4 @@
-2018-08-06 14:35:45,829 ERROR: Exception on /edit_profile [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 50, in edit_profile
-    form = EditProfileForm()#current_user.username
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\wtforms\form.py", line 212, in __call__
-    return type.__call__(cls, *args, **kwargs)
-TypeError: __init__() missing 1 required positional argument: 'original_username'
-2018-08-06 14:36:33,106 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:36:48,045 ERROR: Exception on /edit_profile [POST] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 51, in edit_profile
-    if form.validate_on_submit():
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_wtf\form.py", line 101, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\wtforms\form.py", line 310, in validate
-    return super(Form, self).validate(extra)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\wtforms\form.py", line 152, in validate
-    if not field.validate(self, extra):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\wtforms\fields\core.py", line 206, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\wtforms\fields\core.py", line 226, in _run_validation_chain
-    validator(form, self)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\forms.py", line 43, in validate_username
-    if username.data != self.original_username:
-NameError: name 'username' is not defined
-2018-08-06 14:38:05,697 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:44:58,030 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 14:49:00,871 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 15:39:56,512 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 15:48:29,040 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 15:52:44,972 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 15:59:15,500 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 16:00:13,258 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+2018-08-06 17:25:37,129 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -118,3 +58,64 @@ Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3063, in _requires_quotes
     lc_value = value.lower()
 AttributeError: 'String' object has no attribute 'lower'
+2018-08-06 17:25:42,787 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
+    return render_template('index.html', title='Home page', form=form, posts=User.posts)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\base.html", line 29, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 19, in block "content"
+    {{ post.author.username }} says: <b>{{ post.body }}</b>
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\markupsafe\_native.py", line 22, in escape
+    return Markup(text_type(s)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 452, in __str__
+    return str(self.compile())
+  File "<string>", line 1, in <lambda>
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 442, in compile
+    return self._compiler(dialect, bind=bind, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 448, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 453, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 219, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 245, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\visitors.py", line 81, in _compiler_dispatch
+    return meth(self, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 716, in visit_column
+    name = self.preparer.quote(name)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3092, in quote
+    if self._requires_quotes(ident):
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3063, in _requires_quotes
+    lc_value = value.lower()
+AttributeError: 'String' object has no attribute 'lower'
+2018-08-06 17:30:21,636 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]

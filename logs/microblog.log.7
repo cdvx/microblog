@@ -1,4 +1,4 @@
-2018-08-06 17:25:37,129 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+2018-08-06 17:30:28,440 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -33,32 +33,19 @@ Traceback (most recent call last):
   File "C:\Users\GETRUDE\Desktop\microblog\app\templates\base.html", line 29, in top-level template code
     {% block content %}{% endblock %}
   File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 19, in block "content"
-    {{ post.author.username }} says: <b>{{ post.body }}</b>
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\markupsafe\_native.py", line 22, in escape
-    return Markup(text_type(s)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 452, in __str__
-    return str(self.compile())
-  File "<string>", line 1, in <lambda>
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 442, in compile
-    return self._compiler(dialect, bind=bind, **kw)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 448, in _compiler
-    return dialect.statement_compiler(dialect, self, **kw)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 453, in __init__
-    Compiled.__init__(self, dialect, statement, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 219, in __init__
-    self.string = self.process(self.statement, **compile_kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 245, in process
-    return obj._compiler_dispatch(self, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\visitors.py", line 81, in _compiler_dispatch
-    return meth(self, **kw)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 716, in visit_column
-    name = self.preparer.quote(name)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3092, in quote
-    if self._requires_quotes(ident):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3063, in _requires_quotes
-    lc_value = value.lower()
-AttributeError: 'String' object has no attribute 'lower'
-2018-08-06 17:25:42,787 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+    {{ posts.author.username }} says: <b>{{ post.body }}</b>
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 434, in getattr
+    return obj[attribute]
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\attributes.py", line 180, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\operators.py", line 214, in operate
+    raise NotImplementedError(str(op))
+NotImplementedError: <built-in function getitem>
+2018-08-06 17:31:30,821 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -93,29 +80,16 @@ Traceback (most recent call last):
   File "C:\Users\GETRUDE\Desktop\microblog\app\templates\base.html", line 29, in top-level template code
     {% block content %}{% endblock %}
   File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 19, in block "content"
-    {{ post.author.username }} says: <b>{{ post.body }}</b>
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\markupsafe\_native.py", line 22, in escape
-    return Markup(text_type(s)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 452, in __str__
-    return str(self.compile())
-  File "<string>", line 1, in <lambda>
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 442, in compile
-    return self._compiler(dialect, bind=bind, **kw)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 448, in _compiler
-    return dialect.statement_compiler(dialect, self, **kw)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 453, in __init__
-    Compiled.__init__(self, dialect, statement, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 219, in __init__
-    self.string = self.process(self.statement, **compile_kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 245, in process
-    return obj._compiler_dispatch(self, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\visitors.py", line 81, in _compiler_dispatch
-    return meth(self, **kw)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 716, in visit_column
-    name = self.preparer.quote(name)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3092, in quote
-    if self._requires_quotes(ident):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3063, in _requires_quotes
-    lc_value = value.lower()
-AttributeError: 'String' object has no attribute 'lower'
-2018-08-06 17:30:21,636 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+    {{ posts.author.username }} says: <b>{{ post.body }}</b>
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 434, in getattr
+    return obj[attribute]
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\attributes.py", line 180, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\operators.py", line 214, in operate
+    raise NotImplementedError(str(op))
+NotImplementedError: <built-in function getitem>
+2018-08-06 17:34:14,004 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]

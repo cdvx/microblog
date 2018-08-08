@@ -1,4 +1,26 @@
-2018-08-06 18:11:12,853 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+2018-08-06 18:18:59,585 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
+    posts = Post.query.filter_by(user_id=current_user.query.get(int(id)))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'builtin_function_or_method'
+2018-08-06 18:21:25,345 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 18:23:17,876 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 18:23:59,200 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 18:24:07,942 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,10 +37,10 @@ Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
   File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 21, in index
-    return render_template('index.html', title='Home page', form=form, posts=posts)
-UnboundLocalError: local variable 'posts' referenced before assignment
-2018-08-06 18:12:13,075 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 18:12:16,513 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+    return render_template('index.html', title='Home page', form=form, posts=posts_)
+UnboundLocalError: local variable 'posts_' referenced before assignment
+2018-08-06 18:25:57,962 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 18:26:04,308 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -34,11 +56,11 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
-    posts = Post.query.all.filter_by(user_id=current_user.querry.get(id))
-AttributeError: 'function' object has no attribute 'filter_by'
-2018-08-06 18:12:59,724 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 18:13:03,394 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 21, in index
+    return render_template('index.html', title='Home page', form=form, posts=posts_)
+UnboundLocalError: local variable 'posts_' referenced before assignment
+2018-08-06 18:28:19,009 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 18:28:26,107 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -54,70 +76,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
-    posts = Post.query.filter_by(user_id=current_user.querry.get(id))
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'User' object has no attribute 'querry'
-2018-08-06 18:13:39,127 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 18:13:48,596 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
-    posts = Post.query.filter_by(user_id=current_user.query.get(id))
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\query.py", line 923, in get
-    ident, loading.load_on_pk_identity)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\query.py", line 1006, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
-    return q.one()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\query.py", line 2947, in one
-    ret = self.one_or_none()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\query.py", line 2917, in one_or_none
-    ret = list(self)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\query.py", line 2988, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\orm\query.py", line 3011, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type. [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = ?'] [parameters: (<built-in function id>,)] (Background on this error at: http://sqlalche.me/e/rvf5)
-2018-08-06 18:18:49,044 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 22, in index
+    return render_template('index.html', title='Home page', form=form, posts=posts_)
+UnboundLocalError: local variable 'posts_' referenced before assignment
+2018-08-06 18:30:25,800 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]

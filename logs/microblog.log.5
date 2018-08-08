@@ -1,4 +1,4 @@
-2018-08-06 17:34:25,817 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+2018-08-06 17:45:15,497 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,7 +15,68 @@ Traceback (most recent call last):
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
   File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
-    return render_template('index.html', title='Home page', form=form, posts='User.posts')
+    return render_template('index.html', title='Home page', form=form, posts=current_user.posts)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\base.html", line 29, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 20, in block "content"
+    {{ current_user.username }} says: <b>{{ post.body }}</b>
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\markupsafe\_native.py", line 22, in escape
+    return Markup(text_type(s)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 452, in __str__
+    return str(self.compile())
+  File "<string>", line 1, in <lambda>
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 442, in compile
+    return self._compiler(dialect, bind=bind, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 448, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 453, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 219, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 245, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\visitors.py", line 81, in _compiler_dispatch
+    return meth(self, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 716, in visit_column
+    name = self.preparer.quote(name)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3092, in quote
+    if self._requires_quotes(ident):
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3063, in _requires_quotes
+    lc_value = value.lower()
+AttributeError: 'String' object has no attribute 'lower'
+2018-08-06 18:04:28,730 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+2018-08-06 18:04:38,770 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
+    return render_template('index.html', title='Home page', form=form, posts=current_user.posts)
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 135, in render_template
     context, ctx.app)
   File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 117, in _render
@@ -33,87 +94,29 @@ Traceback (most recent call last):
   File "C:\Users\GETRUDE\Desktop\microblog\app\templates\base.html", line 29, in top-level template code
     {% block content %}{% endblock %}
   File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 19, in block "content"
-    {{ posts.author.username }} says: <b>{{ post.body }}</b>
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'str object' has no attribute 'author'
-2018-08-06 17:43:20,765 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
-2018-08-06 17:43:25,263 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
-    return render_template('index.html', title='Home page', form=form, posts=current_user.posts)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\base.html", line 29, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 20, in block "content"
-    {{ form.post.author.username }} says: <b>{{ post.body }}</b>
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'wtforms.fields.simple.TextAreaField object' has no attribute 'author'
-2018-08-06 17:43:30,736 ERROR: Exception on /index [GET] [in c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\routes.py", line 20, in index
-    return render_template('index.html', title='Home page', form=form, posts=current_user.posts)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\base.html", line 29, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\GETRUDE\Desktop\microblog\app\templates\index.html", line 20, in block "content"
-    {{ form.post.author.username }} says: <b>{{ post.body }}</b>
-  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'wtforms.fields.simple.TextAreaField object' has no attribute 'author'
-2018-08-06 17:44:57,954 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
+    <p>{{ posts }}</p> <!--says: <b>{{ post.body }}</b></p-->
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\markupsafe\_native.py", line 22, in escape
+    return Markup(text_type(s)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 452, in __str__
+    return str(self.compile())
+  File "<string>", line 1, in <lambda>
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 442, in compile
+    return self._compiler(dialect, bind=bind, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\elements.py", line 448, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 453, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 219, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 245, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\visitors.py", line 81, in _compiler_dispatch
+    return meth(self, **kw)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 716, in visit_column
+    name = self.preparer.quote(name)
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3092, in quote
+    if self._requires_quotes(ident):
+  File "c:\users\getrude\desktop\microblog\v_env\lib\site-packages\sqlalchemy\sql\compiler.py", line 3063, in _requires_quotes
+    lc_value = value.lower()
+AttributeError: 'String' object has no attribute 'lower'
+2018-08-06 18:11:03,435 INFO: Microblog startup [in C:\Users\GETRUDE\Desktop\microblog\app\__init__.py:52]
