@@ -53,3 +53,5 @@ class PostForm(FlaskForm):
 	validators=[DataRequired(), Length(min=1, max=140)])
 	submit = SubmitField('submit')
 
+class PostsForm(FlaskForm):
+	#
